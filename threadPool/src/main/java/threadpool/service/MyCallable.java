@@ -1,28 +1,24 @@
-package thread.controller;
-
-import thread.service.ThreadService;
+package threadpool.service;
 
 import java.util.concurrent.Callable;
 
 /**
- * 自定义Callable，不是任务类
+ * Callable任务类
  *
  * @author LENOVO
- * @since 2024/7/15 10:53
+ * @since 2024/7/24 16:04
  */
-public class MyCallable implements Callable<String> {
+public class MyCallable implements Callable {
 
     private int n;
 
-    MyCallable(int n) {
+    public MyCallable(int n){
         this.n = n;
     }
 
-    int sum = 0;
-
     @Override
     public String call() throws Exception {
-
+        int sum = 0;
         for (int i = 1; i <= n; i++) {
             sum += i;
         }
