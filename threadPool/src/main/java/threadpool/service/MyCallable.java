@@ -22,6 +22,6 @@ public class MyCallable implements Callable {
         for (int i = 1; i <= n; i++) {
             sum += i;
         }
-        return "线程求出了1-" + n + "的和是：" + sum;
+        return Thread.currentThread().getName() + "线程求出了1-" + n + "的和是：" + sum;
     }
 }
