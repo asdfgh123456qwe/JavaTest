@@ -3,11 +3,7 @@ package threadpool.controller;
 import org.apache.tomcat.util.threads.ThreadPoolExecutor;
 import threadpool.service.MyRunable;
 
-import java.util.HashSet;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 线程池
@@ -17,6 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ThreadPool {
     public static void main(String[] args) {
+
         ExecutorService pool = new ThreadPoolExecutor(3,
                 5,
                 8,
@@ -34,13 +31,13 @@ public class ThreadPool {
         pool.execute(target);   // 复用前面的核心线程
 
         // 到了临时线程的创建时机了
-        pool.execute(target);   // 复用前面的核心线程
-        pool.execute(target);   // 复用前面的核心线程
+        pool.execute(target);   // 使用临时线程
+        pool.execute(target);   // 使用临时线程
 
         // 到了新任务的拒绝时机了
         pool.execute(target);
 
-//        pool.shutdown();
-//        pool.shutdownNow();
+//        pool.shutdown();   // 等线程池的任务都执行完再关闭线程池
+//        pool.shutdownNow();    // 立即关闭线程池，不管任务是否执行完毕
     }
 }
