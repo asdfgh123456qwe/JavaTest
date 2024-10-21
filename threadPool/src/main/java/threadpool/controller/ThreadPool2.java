@@ -26,5 +26,6 @@ public class ThreadPool2 {
         System.out.println(f2.get());
         System.out.println(f3.get());
         System.out.println(f4.get());
+
     }
 }
