@@ -1,5 +1,6 @@
 package threadpool.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import threadpool.service.MyCallable;
 
 import java.util.concurrent.*;
@@ -10,6 +11,7 @@ import java.util.concurrent.*;
  * @author LENOVO
  * @since 2024/7/24 16:07
  */
+@Slf4j
 public class ThreadPool2 {
     public static void main(String[] args) throws Exception {
 
@@ -22,10 +24,10 @@ public class ThreadPool2 {
         Future<String> f3 = pool.submit(new MyCallable(300));
         Future<String> f4 = pool.submit(new MyCallable(400));
 
-        System.out.println(f1.get());
-        System.out.println(f2.get());
-        System.out.println(f3.get());
-        System.out.println(f4.get());
+        log.info(f1.get());
+        log.info(f2.get());
+        log.info(f3.get());
+        log.info(f4.get());
 
     }
 }
