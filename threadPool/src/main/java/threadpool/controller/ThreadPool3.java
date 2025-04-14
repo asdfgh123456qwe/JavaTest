@@ -12,10 +12,10 @@ import java.util.concurrent.*;
  */
 public class ThreadPool3 {
     public static void main(String[] args) {
-        ExecutorService pool = Executors.newFixedThreadPool(17);
+        ExecutorService pool = Executors.newFixedThreadPool(3);
         // 计算密集型任务：核心线程数量 = CPU的核数 + 1
         // IO密集型任务：核心线程数量 = CPU核数 * 2
-//        ExecutorService pool1 = Executors.newSingleThreadExecutor();
+        ExecutorService pool1 = Executors.newSingleThreadExecutor();
 //        ExecutorService pool2 = Executors.newCachedThreadPool();
 //        ScheduledExecutorService pool3 = Executors.newScheduledThreadPool(4);
 
