@@ -11,8 +11,12 @@
     <groupId>org</groupId>
     <artifactId>JavaTest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>JavaTest</name>
     <description>JavaTest</description>
+    <modules>
+        <module>threadnew</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
     </properties>
