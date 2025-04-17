@@ -14,13 +14,23 @@ public class ThreasdTest1 {
     public static void main(String[] args) {
 
         // 创建MyThread线程类表示一个线程
-        Thread myThread = new MyThread();
+//        Thread myThread = new MyThread();
+//
+//        // 启动线程
+//        myThread.start();
 
-        // 启动线程
-        myThread.start();
+        //     MyRunable target = new MyRunable();
 
-        for (int i = 0; i < 100; i++) {
-            log.info("主线程:" + i);
+//        new Thread(() -> {
+//            for (int i = 0; i < 5; i++) {
+//                System.out.println("子线程:" + i);
+//            }
+//        }).start();
+
+
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("主线程：" + i);
         }
     }
 

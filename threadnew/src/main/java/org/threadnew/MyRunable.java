@@ -3,20 +3,17 @@ package org.threadnew;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 线程练习
+ * 我的任务对象
  *
  * @author LENOVO
- * @since 2025/4/14 17:19
+ * @since 2025/4/15 10:37
  */
 @Slf4j
-public class MyThread extends Thread{
-
+public class MyRunable implements Runnable{
     @Override
     public void run() {
         for (int i = 0; i < 5; i++) {
-        //    log.info("ggg");
-            System.out.println("子线程："+i);
+            System.out.println("子线程:"+i);
         }
     }
-
 }
