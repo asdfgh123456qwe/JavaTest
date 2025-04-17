@@ -3,7 +3,6 @@ package org.threadnew;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
@@ -13,7 +12,7 @@ import java.util.concurrent.FutureTask;
  * @since 2025/4/14 17:21
  */
 @Slf4j
-public class ThreasdTest1 {
+public class ThreadTest1 {
 
     public static void main(String[] args) throws Exception {
 
