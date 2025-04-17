@@ -11,11 +11,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyThread extends Thread{
 
+    public MyThread(String name){
+        super(name);
+    }
+
     @Override
     public void run() {
-        for (int i = 0; i < 5; i++) {
-        //    log.info("ggg");
-            System.out.println("子线程："+i);
+
+        String name = Thread.currentThread().getName();
+
+        for (int i = 1; i <= 5; i++) {
+            log.info("{}线程:{}", name, i);
         }
     }
 
