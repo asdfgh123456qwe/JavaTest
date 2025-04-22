@@ -1,8 +1,6 @@
 package com.threadpoolnew;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.Callable;
 
@@ -30,6 +28,6 @@ public class MyCallable implements Callable<String> {
         for (int i = 1; i <= n; i++) {
             sum += i;
         }
-        return "线程" + Thread.currentThread().getName() + "得出的和为：" + sum;
+        return "线程" + Thread.currentThread().getName() + "计算1-" + n + "得出的和为：" + sum;
     }
 }
