@@ -2,6 +2,7 @@ package com.threadextend;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -14,22 +15,14 @@ import java.util.concurrent.locks.ReentrantLock;
 @Slf4j
 public class MyRunable2 implements Runnable {
 
-    private int count;
-
-    private final Lock lk = new ReentrantLock();
+    private AtomicInteger count = new AtomicInteger();
 
     @Override
     public void run() {
 
         for (int i = 0; i < 100; i++) {
-            try {
-                lk.lock();
-                log.info("count =========> {}", ++count);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            } finally {
-                lk.unlock();
-            }
+
+            log.info("count =========> {}", count.incrementAndGet());
 
         }
 
