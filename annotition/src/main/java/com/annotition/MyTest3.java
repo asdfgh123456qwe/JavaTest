@@ -5,10 +5,13 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-// 设置该注解生效的位置
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MyTest2 {
+public @interface MyTest3 {
 
     public String value();
+
+    public double aaa() default 100;
+
+    public String[] bbb();
 }
